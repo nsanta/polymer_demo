@@ -1,0 +1,43 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/core-icon-button/core-icon-button.html">
+
+<polymer-element name="task-card">
+  <template>
+    <style>
+    :host {
+      display: inline;
+      position: relative;
+      background-color: white;
+      padding: 10px;
+      width: 100%;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    .card-header {
+      margin-bottom: 10px;
+    }
+    polyfill-next-selector { content: '.card-header h2'; }
+    .card-header ::content h2 {
+      margin-left: 10px;
+      font-size: 1.2rem;
+      font-weight: 300;
+      width: 90%;
+      float: left;
+    }
+    polyfill-next-selector { content: '.card-header paper-fab'; }
+    .card-header ::paper-fab {
+      width: 10%;
+      float: right;
+    }
+
+    </style>
+    <div class="card-header" layout horizontal center>
+      <paper-fab mini icon="check" style="background-color: green;">
+      </paper-fab>
+      <content select="h2"></content>
+    </div>
+  </template>
+  <script>
+  Polymer({});
+  </script>
+</polymer-element>

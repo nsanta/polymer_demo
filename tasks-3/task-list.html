@@ -1,0 +1,34 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../post-service/task-service.html">
+<link rel="import" href="task-card.html">
+
+<polymer-element name="task-list" attributes="show">
+  <template>
+    <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+    task-card {
+      margin-bottom: 30px;
+    }
+    </style>
+
+    <task-service id="service" tasks="{{tasks}}">
+    </task-service>
+    
+    <div layout vertical center>
+
+      <template repeat="{{task in tasks}}">
+        <task-card>
+          <img src="../images/avatar-07.svg">
+          <h2>{{task.title}}</h2>
+        </task-card>
+      </template>
+      
+    </div>
+  </template>
+  <script>
+  Polymer({});
+  </script>
+</polymer-element>
